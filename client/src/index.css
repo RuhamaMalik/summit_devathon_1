@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  /* ---light: rgb(163, 183, 192); */
+  --dark: #000000;
+  ---light: rgb(20, 137, 152);
+  --contrast: rgb(7, 76, 106);
+  /* --dark: #0a5c7d; */
+  /* ---light: #0a5c7d;
+  --dark: #0bdff6; */
+  --grey: #444;
+  --light-grey: #635a5a;
+  --box-shadow2: 0.5rem 0.5rem 0 rgba(41, 4, 2, 0.2);
+  --box-shadow: 0 0 2px gray;
+  --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+  --border: var(---light);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  /* text-transform: capitalize; */
+  text-decoration: none;
+}
+
+html {
+  font-size: 72.4%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+.form-btn {
+  width: 250px !important;
+  margin-top: 30px !important;
+  padding: 0.6rem;
+  font-size: 1.8rem;
+}
+/*  BOOKING PAGE */
+
+.book {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  /* gap: 1rem; */
+  align-items: center;
+
+}
+.book .content {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  padding: 3rem !important;
+  width: 100% !important;
+}
+.content h1{
+  color: var(--contrast);
+  text-shadow: 4px 4px 2px lightgray;
+  text-align: center;
+}
+.book .image{
+  text-align: center;
+  background-color: #0c69f5cc;
+}
+.book .image img {
+ 
+  /* width: 440px; */
+  width: 100%;
+}
+
+/* SPINNER / LOADER */
+.spinner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* // HEADING */
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  text-shadow: var(--text-shadow);
+  text-transform: uppercase;
+  color: var(--grey) !important;
+  font-size: 4.5rem;
+  letter-spacing: 0.2rem;
+}
+ .heading span {
+  text-transform: uppercase;
+  color: var(--contrast);
+}
+/* BUTTONS */
+.mybtn {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.4rem !important;
+  padding-left: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  /* outline: 1px solid white ;*/
+  box-shadow: var(--box-shadow2);
+  color: var(---light);
+  cursor: pointer;
+  font-size: 1.8rem !important;
+  background: white;
+}
+
+.mybtn span {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(---light);
+  color: white;
+  margin: 0.4rem;
+}
+
+.mybtn:hover {
+  color: white;
+  background-color: var(---light);
+}
+
+.mybtn:hover span {
+  color: var(---light);
+  background-color: white;
+  margin-left: 1rem;
+}
+
+.btns{
+  padding: .5em 1.5em !important;
+  width: 120px !important;
+  font-size: 1em !important;
+}
+/* ////////////////  DOCTOR LIST / DOCTOR CARDS */
+.docCards {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  row-gap: 2em;
+  justify-content: space-evenly;
+}
+.imgHead {
+  height: 170px;
+  /* box-shadow: var(--box-shadow); */
+}
+.img {
+  background-color: var(--dark);
+  height: 80px;
+  position: relative;
+  border-radius: 5px 5px 0 0;
+}
+.doctorLogo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+  background-color: white;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  /* box-shadow: var(--box-shadow); */
+  border: solid var(--border);
+  box-shadow: var(--box-shadow2);
+}
+.myCard {
+  width: 100%;
+  box-shadow: var(--box-shadow2);
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 1115px) {
+  html {
+    font-size: 56%;
+  }
+  .docCards {
+    grid-template-columns: repeat(2, 300px);
+  }
+  .book .content{
+   margin: auto;
+    width: 70%;
+  }
+  .book .content button{
+    font-size: 2em !important;
+  }
+  @media (max-width: 1049px) {
+  .book .image img{
+    width: 70%;
+height: 350px;
+  }
+  }
+  
+}
+
+@media (max-width: 960px) {
+  .docCards {
+    grid-template-columns: repeat(2, 270px);
+  }
+ 
+}
+
+@media (max-width: 840px) {
+  .home,
+  .about .row,
+  .book .row {
+    flex-wrap: wrap;
+  }
+  .docCards {
+    grid-template-columns: 300px;
+  }
+  
+/*   
+  .book .content{
+     width: 90%;
+   background-color: #444;
+   } */
+   .book .content button{
+     font-size: 1.5em !important;
+   }
+}
+
+@media (max-width: 650px) {
+  .book .image  img{
+    width: 90%;
+  }
+  .content h1{
+    color: var(--contrast);
+    font-size: 3.5em ;
+    text-shadow: 4px 4px 2px lightgray;
+  }
+  .content h4 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+/* Page not found */
+
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading {
+  font-weight: normal;
+}
+
+.pnf-btn {
+  color: whitesmoke;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 20px 50px;
+  margin-top: 10px;
+  font-size: 14px;
+  background-color: var(---light);
+}
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
