@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "http://localhost:8000/",
+  "proxy": "https://doctor-appointment-phi.vercel.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

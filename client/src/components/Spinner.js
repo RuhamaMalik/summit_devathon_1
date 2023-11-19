@@ -1,5 +1,3 @@
-import { useState, CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 const Spinner = () => {
   return (
     <div>
@@ -10,6 +8,6 @@ const Spinner = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Spinner;
