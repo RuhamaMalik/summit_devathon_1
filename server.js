@@ -17,23 +17,18 @@ const app = express();
 //middlewares
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cors());
 
 //routes
-// app.get("/", (req, res) => {
-//   res.status(200).send({
-//     message: "Server is running",
-//   });
-// });
 
 app.get("/", (req, res) => {
-  res.status(200).send("hello");
+  res.status(200).send("Server is running");
 });
 
 app.use("/api/v1/user", require("./routes/userRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use("/api/v1/doctor", require("./routes/doctorRoutes"));
 
-app.use(cors());
 
 // setup for deployment
 
@@ -45,8 +40,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 //port
-// const port = process.env.PORT || 8000;
-const port = 8000
+const port = 8000;
+
 // app listen
 // app.listen(port, () => {
 //   console.log(
