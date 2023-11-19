@@ -45,8 +45,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 //port
-const port = process.env.PORT || 8000;
-
+// const port = process.env.PORT || 8000;
+const port = 8000
 // app listen
 // app.listen(port, () => {
 //   console.log(

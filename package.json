@@ -4,7 +4,7 @@
   "description": "Doctor Appoinment app",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "client": "npm start --prefix ./client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm start\" \"npm run client\""
