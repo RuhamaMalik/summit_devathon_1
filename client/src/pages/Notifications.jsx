@@ -43,7 +43,7 @@ const Notifications = () => {
     const handleDeleteAllRead = async () => {
         try {
             dispatch(showLoading());
-            const res = await axios.post('/api/v1/user/delete-notifications', {
+            const res = await axios.post('https://project1-devathon.vercel.app/api/v1/user/delete-notifications', {
                 userId: user._id
             }, {
                 headers: {
