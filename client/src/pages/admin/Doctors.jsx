@@ -8,7 +8,7 @@ const Doctors = () => {
   // get all doctors
   const getDoctorsList = async () => {
     try {
-      const res = await axios.get(`${process.env.API_KEY}/admin/getAllDoctors`, {
+      const res = await axios.get(`https://project1-devathon.vercel.app/api/v1/admin/getAllDoctors`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -35,7 +35,7 @@ const Doctors = () => {
 
       if (res.data.success) {
         message.success(res.data.message);
-        getDoctorsList()        
+        getDoctorsList()
       }
     } catch (error) {
       message.error('Something wen wrong');

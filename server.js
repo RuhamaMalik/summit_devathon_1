@@ -1,12 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
-// const dotenv = require("dotenv");
+const dotenv = require("dotenv");
 const conenectDB = require("./config/db");
 const cors = require("cors");
 const config = require("./config/keys");
 
 // dotenv config
-// dotenv.config();
+dotenv.config();
 
 //monodb connection
 conenectDB();

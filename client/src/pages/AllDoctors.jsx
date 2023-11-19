@@ -10,7 +10,7 @@ const AllDoctors = () => {
     //login user data
     const getUserData = async () => {
         try {
-            const res = await axios.get(`${process.env.API_KEY}/user/getAllDoctors`, {
+            const res = await axios.get(`https://project1-devathon.vercel.app/api/v1/user/getAllDoctors`, {
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem('token')
                 }
@@ -28,10 +28,10 @@ const AllDoctors = () => {
 
     return (
         <Layout>
-            <h1 className='heading' style={{paddingTop:'20px'}}>Doctors<span className='fa-solid fa-stethoscope'></span></h1>
+            <h1 className='heading' style={{ paddingTop: '20px' }}>Doctors<span className='fa-solid fa-stethoscope'></span></h1>
             <Row className='docCards'>
                 {doctors && doctors.map((doctor) => (
-                    <DoctorList doctor={doctor}  key={doctor._id}/>
+                    <DoctorList doctor={doctor} key={doctor._id} />
                 ))}
             </Row>
         </Layout>

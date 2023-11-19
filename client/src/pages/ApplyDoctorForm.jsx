@@ -22,7 +22,7 @@ const ApplyDoctorForm = () => {
                 values.timings[0].format('HH:mm'),
                 values.timings[1].format('HH:mm')
             ];
-            const res = await axios.post(`${process.env.API_KEY}/user/apply-doctor`, {
+            const res = await axios.post(`https://project1-devathon.vercel.app/api/v1/user/apply-doctor`, {
                 ...values,
                 userId: user._id,
                 timings: formattedTimings
@@ -80,7 +80,7 @@ const ApplyDoctorForm = () => {
                             <Select placeholder="Select gender">
                                 <Option value="male">Male</Option>
                                 <Option value="female">Female</Option>
-                               
+
                             </Select>
                         </Form.Item>
                     </Col>

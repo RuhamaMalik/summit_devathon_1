@@ -9,7 +9,7 @@ const Users = () => {
     // get all users
     const getUsersList = async () => {
         try {
-            const res = await axios.get(`${process.env.API_KEY}/admin/getAllUsers`, {
+            const res = await axios.get(`https://project1-devathon.vercel.app/api/v1/admin/getAllUsers`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
@@ -78,7 +78,7 @@ const Users = () => {
             dataIndex: 'actions',
             render: (text, record) => (
                 <div className='d-flex'>
-                    {record.isActivate === 'block'?
+                    {record.isActivate === 'block' ?
                         <button className='btn btn-success btns' onClick={() => handleUserAccountStatus(record)}>Activate</button>
                         :
                         <button className='btn btn-danger btns' onClick={() => handleUserAccountStatus(record)}>Block</button>}

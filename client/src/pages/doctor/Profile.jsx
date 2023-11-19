@@ -19,7 +19,7 @@ const Profile = () => {
     // get doctor details
     const getDoctorInfo = async () => {
         try {
-            const res = await axios.post(`${process.env.API_KEY}/doctor/getDoctorInfo`, {
+            const res = await axios.post(`https://project1-devathon.vercel.app/api/v1/doctor/getDoctorInfo`, {
                 userId: params.id
             }, {
                 headers: {
