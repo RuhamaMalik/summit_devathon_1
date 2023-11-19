@@ -8,7 +8,7 @@ const DoctorAppointments = () => {
     const [appointments, setAppointments] = useState([]);
     const getAppointments = async () => {
         try {
-            const res = await axios.get('/api/v1/doctor/doctor-appointments', {
+            const res = await axios.get('https://project1-devathon.vercel.app/api/v1/doctor/doctor-appointments', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

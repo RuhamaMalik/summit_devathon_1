@@ -21,7 +21,7 @@ const BookingPage = () => {
     //fetch single doctor data
     const getDoctorById = async () => {
         try {
-            const res = await axios.post('/api/v1/doctor/getDoctorById',
+            const res = await axios.post('https://project1-devathon.vercel.app/api/v1/doctor/getDoctorById',
                 {
                     doctorId: params.doctorId
                 }, {
@@ -58,7 +58,7 @@ const BookingPage = () => {
             const formattedDate = moment(dateAsDate).format('DD-MM-YYYY');
             const formattedTime = moment(timeAsDate).format('HH:mm');
 
-            const res = await axios.post('/api/v1/user/booking-availability', {
+            const res = await axios.post('https://project1-devathon.vercel.app/api/v1/user/booking-availability', {
                 doctorId: params.doctorId,
                 date: formattedDate,
                 time: formattedTime,
@@ -101,7 +101,7 @@ const BookingPage = () => {
 
             dispatch(showLoading());
             const res = await axios.post(
-                '/api/v1/user/book-appointment',
+                'https://project1-devathon.vercel.app/api/v1/user/book-appointment',
                 {
                     doctorId: params.doctorId,
                     userId: user._id,

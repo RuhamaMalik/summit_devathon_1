@@ -19,7 +19,7 @@ const Signup = () => {
     const user = { name, email, password }
     try {
       dispatch(showLoading());
-      const res = await axios.post('/api/v1/user/signup', user);
+      const res = await axios.post('https://project1-devathon.vercel.app/api/v1/user/signup', user);
       dispatch(hideLoading());
       if (res.data.success) {
         toast.success(res.data.message);

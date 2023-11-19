@@ -15,7 +15,7 @@ const Notifications = () => {
     const handleMarkAllRead = async () => {
         try {
             dispatch(showLoading());
-            const res = await axios.post('api/v1/user/all-notifications',
+            const res = await axios.post('https://project1-devathon.vercel.app/api/v1/user/all-notifications',
                 { userId: user._id }, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`

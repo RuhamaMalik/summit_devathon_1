@@ -9,7 +9,7 @@ const Users = () => {
     // get all users
     const getUsersList = async () => {
         try {
-            const res = await axios.get('/api/v1/admin/getAllUsers', {
+            const res = await axios.get('https://project1-devathon.vercel.app/api/v1/admin/getAllUsers', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

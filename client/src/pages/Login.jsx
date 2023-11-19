@@ -17,7 +17,7 @@ const Login = () => {
     const user = { email, password }
     try {
       dispatch(showLoading());
-      const res = await axios.post('/api/v1/user/login', user);
+      const res = await axios.post('https://project1-devathon.vercel.app/api/v1/user/login', user);
       dispatch(hideLoading());
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
