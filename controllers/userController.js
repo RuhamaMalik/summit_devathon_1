@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const doctorModel = require("../models/doctorModel");
 const appointmentModel = require("../models/appointmentModel");
 const moment = require("moment");
+const { JSON_SECRET} = require('../config/keys')
 
 // signup controller
 const signupController = async (req, res) => {
@@ -51,7 +52,8 @@ const loginController = async (req, res) => {
     }
 
     // create token
-    const token = jwt.sign({ id: user._id }, process.env.JSON_SECRET, {
+    const token = jwt.sign({ id: user._id }, JSON_SECRET, {
+    // const token = jwt.sign({ id: user._id }, process.env.JSON_SECRET, {
       expiresIn: "1d",
     });
 

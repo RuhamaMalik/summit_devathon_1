@@ -1,9 +1,11 @@
 const jwt = require("jsonwebtoken");
+const {JSON_SECRET} = require('./config/keys')
 
 module.exports = async (req, res, next) => {
   try {
     const token = req.headers["authorization"].split(" ")[1];
-    jwt.verify(token, process.env.JSON_SECRET, (err, decode) => {
+    // jwt.verify(token, process.env.JSON_SECRET, (err, decode) => {
+    jwt.verify(token, JSON_SECRET, (err, decode) => {
       if (err) {
         return res.status(200).send({
           message: "Auth Failed",
