@@ -29,7 +29,7 @@ const DoctorAppointments = () => {
     // handleStatus
     const handleStatus = async (record, status) => {
         try {
-            const res = await axios.post('/api/v1/doctor/update-status', {
+            const res = await axios.post('https://project1-devathon.vercel.app/api/v1/doctor/update-status', {
                 appointmentId: record._id, status
             }, {
                 headers: {

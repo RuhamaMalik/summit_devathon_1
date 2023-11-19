@@ -21,11 +21,10 @@ const Doctors = () => {
       console.log(error)
     }
   }
-
   // handle account  approved
   const handleAccountStatus = async (record, status) => {
     try {
-      const res = await axios.post('/api/v1/admin/changeAccountStatus', {
+      const res = await axios.post('https://project1-devathon.vercel.app/api/v1/admin/changeAccountStatus', {
         doctorId: record._id, userId: record.userId, status: status
       }, {
         headers: {
