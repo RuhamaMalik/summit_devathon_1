@@ -240,9 +240,9 @@ const bookingAvailabilityController = async (req, res) => {
     const fromTime = moment(req.body.time, "HH:mm")
       .subtract(1, "hours")
       .toISOString();
-    console.log("---- fromTime" + fromTime);
+    // console.log("---- fromTime" + fromTime);
     const toTime = moment(req.body.time, "HH:mm").add(1, "hours").toISOString();
-    console.log("---- toTime" + toTime);
+    // console.log("---- toTime" + toTime);
     const doctorId = req.body.doctorId;
     const appointments = await appointmentModel.find({
       doctorId,
