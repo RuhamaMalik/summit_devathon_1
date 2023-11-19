@@ -32,7 +32,7 @@ app.use("/api/v1/doctor", require("./routes/doctorRoutes"));
 
 // setup for deployment
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV == "production") {
   const path = require("path");
   app.get("/", (req, res) => {
     app.use(express.static(path.resolve(__dirname, "client", "build")));
