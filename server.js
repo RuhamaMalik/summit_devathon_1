@@ -1,12 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const conenectDB = require("./config/db");
 const cors = require("cors");
-const NODE_ENV = require('./config/keys')
+const config = require("./config/keys");
 
 // dotenv config
-dotenv.config();
+// dotenv.config();
 
 //monodb connection
 conenectDB();
@@ -16,7 +16,7 @@ const app = express();
 
 //middlewares
 app.use(express.json());
-// app.use(morgan("dev"));
+app.use(morgan("dev"));
 
 //routes
 // app.get("/", (req, res) => {
@@ -44,7 +44,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
 //port
 const port = process.env.PORT || 8000;
 
@@ -56,5 +55,5 @@ const port = process.env.PORT || 8000;
 // });
 
 app.listen(port, () => {
-  console.log(`Server running in ${NODE_ENV} Mode on port ${port}`);
+  console.log(`Server running in ${config.NODE_ENV} Mode on port ${port}`);
 });

@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const doctorModel = require("../models/doctorModel");
 const appointmentModel = require("../models/appointmentModel");
 const moment = require("moment");
-const { JSON_SECRET} = require('../config/keys')
+const JSON_SECRET = require('../config/keys')
 
 // signup controller
 const signupController = async (req, res) => {
