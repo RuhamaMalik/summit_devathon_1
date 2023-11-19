@@ -14,7 +14,7 @@ const ProtectedRoutes = ({ children }) => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "https://project1-devathon.vercel.app/api/v1/user/getUserData",
+        `${process.env.API_KEY}/user/getUserData`,
         { token: localStorage.getItem("token") },
         {
           headers: {
