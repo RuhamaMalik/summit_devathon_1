@@ -52,7 +52,7 @@ const Profile = () => {
             ];
 
             const res = await axios.post(
-                '/api/v1/doctor/updateDoctorProfileInfo', {
+                'https://project1-devathon.vercel.app/api/v1/doctor/updateDoctorProfileInfo', {
                 ...values,
                 userId: user._id,
                 timings: formattedTimings
